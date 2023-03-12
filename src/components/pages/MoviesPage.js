@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
 class MoviesPage extends Component {
+  static propTypes = {
+    movies: PropTypes.array.isRequired,
+  };
+
   render() {
     return (
       <div>
@@ -11,4 +15,10 @@ class MoviesPage extends Component {
   }
 }
 
-export default MoviesPage;
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies,
+  };
+};
+
+export default connect(mapStateToProps)(MoviesPage);
