@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import MoviesPage from "./components/pages/MoviesPage";
+
+import { Link, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -18,6 +22,14 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <p>
+        <Link to="movies">Movies</Link>
+      </p>
+
+      <Routes>
+        <Route path="/movies" Component={MoviesPage}></Route>
+      </Routes>
     </div>
   );
 }
