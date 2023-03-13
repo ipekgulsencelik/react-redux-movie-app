@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
+import MoviesList from "../movies/list/MoviesList";
 class MoviesPage extends Component {
   static propTypes = {
     movies: PropTypes.array.isRequired,
@@ -10,6 +12,7 @@ class MoviesPage extends Component {
     return (
       <div>
         <h2>Movies Page</h2>
+        <MoviesList movies={this.props.movies}></MoviesList>
       </div>
     );
   }
